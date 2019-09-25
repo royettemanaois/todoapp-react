@@ -2,16 +2,14 @@ const User = require('../models/User');
 
 
 module.exports = {
-    
-    
     getUsers (req, res) {
 
         User.find((err, users) => {
             if(err){
-
+                console.log(err)
             }else if(users.length === 0){
                 res.send({
-                    message: "No Users"
+                    message: "There are no users."
                 })
             }else{
                 res.send({
