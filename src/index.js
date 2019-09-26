@@ -2,18 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import AddTodo from './components/AddTodo/AddTodo';
-import Multiplier from './components/Multiplier/Multiplier'
+// import Multiplier from './components/Multiplier/Multiplier';
+// import ArticlesGrid from './components/ArticlesGrid/ArticlesGrid';
+import LoginForm from './components/LoginForm/LoginForm';
+import TodoApp from './components/TodoApp/TodoApp';
+import Main from './components/Main';
+
+import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 
 import * as serviceWorker from './serviceWorker';
-import ArticlesGrid from './components/ArticlesGrid/ArticlesGrid';
+
+import 'semantic-ui-css/semantic.min.css'
+
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
     <div>
-        <AddTodo />
-        <Multiplier />
-        <ArticlesGrid />
+        <Router>
+            <Switch>
+                <Route exact path="/login" component={LoginForm} />
+                <Main>
+                    <Route exact path="/" component={TodoApp}/>
+                </Main>
+            </Switch>
+        </Router>
+        
     </div>
     , document.getElementById('root')
 );
