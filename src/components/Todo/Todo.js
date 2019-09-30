@@ -14,8 +14,7 @@ class Todo extends React.Component {
         TodoService.removeTodo({todoItem, username});
         this.setState({
             isDeleted: true
-        })
-        
+        })        
     }
 
     onCompletion = (item) => {

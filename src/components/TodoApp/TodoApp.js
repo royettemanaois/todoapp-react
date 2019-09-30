@@ -13,6 +13,7 @@ class TodoApp extends React.Component {
         user: {},
         count: 0
     }
+    
     componentDidMount() {
         TodoService.getUser('TestUser2')
             .then(response => {
